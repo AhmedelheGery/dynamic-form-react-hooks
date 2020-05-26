@@ -1,0 +1,9 @@
+.form-container {
+  padding: 1% 3%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.form-input {
+  margin-bottom: 1%;
+}

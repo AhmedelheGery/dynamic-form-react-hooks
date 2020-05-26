@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "./Form.css";
 
 const Form = () => {
-  const [catState, setCatState] = useState([{
-    name:'',
-    age:''
+  const blankCat = { name: '', age: '' };
+  const [catState, setCatState] = useState([{...blankCat
   }])
+  const addCat = () => {
+    setCatState([...catState, {...blankCat}]);
+  };
   return (
     <form className="form-container">
       <div>
@@ -22,7 +24,12 @@ const Form = () => {
         />
       </div>
       <div>
-        <input className="form-input" type="button" value="Add New Cat" />
+        <input 
+        className="form-input" 
+        type="button" 
+        value="Add New Cat" 
+        onClick={addCat}
+        />
         {
         catState&&catState.map((val, idx) => {
           const catId = `name-${idx}`;
